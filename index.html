@@ -5,252 +5,209 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Justin Saju - Python / Odoo Developer at Cybrosys Technologies. Odoo ERP customization, Cybrosys Assista, EasyInstance.">
 <meta property="og:title" content="Justin Saju - Python / Odoo Developer">
-<meta property="og:description" content="Odoo ERP customization, developer tools and SaaS for Odoo.">
+<meta property="og:description" content="I build on Odoo, and the tools that make it easier.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Justin Saju</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: asymmetric editor-split hero, then a single left-aligned reading column with a mono date rail */
+/* Layout: clean SaaS-style page. Split hero with a "workspace" card, then centered section heads over left-aligned content. Light-only by design. */
 :root {
-  --paper: #F4F2F6;
-  --surface: #FFFFFF;
-  --ink: #1E1A22;
-  --muted: #645C69;
-  --line: #DED8E2;
-  --plum: #7A3E6A;
-  --plum-soft: #F0E4EC;
-  --teal: #17736C;
-  /* editor stays dark in both themes */
-  --ed-bg: #1C1820;
-  --ed-bar: #26212B;
-  --ed-ink: #E6E0E9;
-  --ed-dim: #7F7586;
-  --ed-key: #E39BCB;
-  --ed-str: #8FD3C4;
-  --ed-num: #F2C27B;
-  --ed-fn: #9DB8F2;
+  --paper: #FFFFFF;
+  --pale: #F8F9FC;
+  --ink: #0F172A;
+  --muted: #657087;
+  --hairline: #E7E9F1;
+  --indigo: #4F46E5;
+  --indigo-dark: #3D35C6;
+  --soft-indigo: #F1F0FF;
+  --emerald: #10B981;
+  --soft-emerald: #E4F8EF;
 
-  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --body: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
-
-  --s1: .5rem; --s2: 1rem; --s3: 1.5rem; --s4: 2.5rem; --s5: 4rem; --s6: 6rem;
+  --body: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --r: .75rem;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --paper: #131016; --surface: #1B171E; --ink: #EDE8EF; --muted: #A79DAC;
-    --line: #2E2833; --plum: #D892C4; --plum-soft: #2C1F29; --teal: #6CC9BE;
-    --ed-bg: #0E0C10; --ed-bar: #19161C;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --paper: #131016; --surface: #1B171E; --ink: #EDE8EF; --muted: #A79DAC;
-  --line: #2E2833; --plum: #D892C4; --plum-soft: #2C1F29; --teal: #6CC9BE;
-  --ed-bg: #0E0C10; --ed-bar: #19161C;
-}
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font: 400 1.0625rem/1.65 var(--body);
-  -webkit-font-smoothing: antialiased;
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.65 var(--body); -webkit-font-smoothing: antialiased; }
 .wrap {
-  max-width: 72rem;
-  margin: 0 auto;
+  max-width: 70rem; margin: 0 auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px), 1.5rem);
   padding-right: max(16px, env(safe-area-inset-right, 0px), 1.5rem);
 }
 a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; border-radius: 4px; }
-h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; letter-spacing: -.025em; }
 p { margin: 0; }
+em.s { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--indigo); letter-spacing: -.01em; }
+.label { font: 500 .72rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--indigo); }
 
-/* ---------- top bar ---------- */
-body::before {
-  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
-  z-index: 10; background: var(--paper);
-}
-.top {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--s2); padding-block: .85rem; }
-.mark { font: 700 1.05rem/1 var(--display); text-decoration: none; letter-spacing: -.01em; }
-.mark span { color: var(--plum); }
-.nav { display: flex; gap: clamp(.75rem, 2.5vw, 1.75rem); flex-wrap: wrap; }
-.nav a { font: 500 .8rem/1 var(--mono); text-decoration: none; color: var(--muted); }
-.nav a:hover { color: var(--plum); }
+/* nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: rgba(255,255,255,.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--hairline); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .9rem; }
+.logo { font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -.03em; }
+.logo span { color: var(--indigo); }
+.links { display: flex; align-items: center; gap: clamp(.9rem, 2.4vw, 2rem); }
+.links a { text-decoration: none; font-weight: 500; font-size: .92rem; color: var(--muted); }
+.links a:hover { color: var(--ink); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; text-decoration: none; font: 600 .95rem/1 var(--body); padding: .85rem 1.3rem; border-radius: 999px; border: 1px solid var(--hairline); background: var(--paper); color: var(--ink); transition: transform .2s, background .2s, border-color .2s; }
+.btn:hover { transform: translateY(-1px); border-color: #C9CCE0; }
+.btn.primary { background: var(--indigo); border-color: var(--indigo); color: #fff; box-shadow: 0 8px 20px -8px rgba(79,70,229,.6); }
+.btn.primary:hover { background: var(--indigo-dark); }
+.links .btn { padding: .6rem 1.05rem; font-size: .88rem; color: #fff; }
 
-/* ---------- hero ---------- */
-.hero { padding-block: var(--s5) var(--s5); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: var(--s4) var(--s5); align-items: center; }
-.status {
-  display: inline-flex; align-items: center; gap: .55rem;
-  font: 500 .78rem/1 var(--mono); color: var(--teal);
-  padding: .45rem .7rem; border: 1px solid color-mix(in srgb, var(--teal) 35%, transparent); border-radius: 999px;
-}
-.status i { width: .5rem; height: .5rem; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px color-mix(in srgb, var(--teal) 20%, transparent); }
-.hero h1 {
-  font-size: clamp(3rem, 8vw, 5.6rem); font-weight: 800; line-height: .92; letter-spacing: -.035em;
-  margin-top: var(--s3);
-}
-.hero h1 em { font-style: normal; color: var(--plum); }
-.role { font: 600 clamp(1.1rem, 2.2vw, 1.35rem)/1.3 var(--display); margin-top: var(--s3); }
-.lede { color: var(--muted); max-width: 34rem; margin-top: var(--s2); }
-.cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: var(--s4); }
-.btn {
-  display: inline-flex; align-items: center; gap: .5rem; text-decoration: none;
-  font: 600 .95rem/1 var(--body); padding: .9rem 1.25rem; border-radius: .6rem;
-  border: 1px solid var(--line); background: var(--surface); transition: border-color .2s, transform .2s;
-}
-.btn:hover { border-color: var(--plum); transform: translateY(-1px); }
-.btn.primary { background: var(--plum); color: var(--paper); border-color: var(--plum); }
-.btn svg { width: 1rem; height: 1rem; fill: currentColor; }
-.where { font: 400 .8rem/1 var(--mono); color: var(--muted); margin-top: var(--s3); }
+/* hero */
+.hero { background: radial-gradient(60rem 30rem at 85% -10%, var(--soft-indigo), transparent 60%), var(--paper); padding-block: clamp(3rem, 7vw, 5.5rem) clamp(3rem, 6vw, 5rem); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.3rem); line-height: 1.02; font-weight: 800; margin-top: 1.1rem; }
+.hero h1 em.s { display: block; font-size: 1.08em; line-height: 1; margin-top: .15em; }
+.hero .sub { color: var(--muted); font-size: 1.1rem; max-width: 33rem; margin-top: 1.4rem; }
+.cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.checks { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin-top: 1.6rem; color: var(--muted); font-size: .9rem; font-weight: 500; }
+.checks span { display: inline-flex; align-items: center; gap: .45rem; }
+.checks svg { width: 1rem; height: 1rem; color: var(--emerald); }
 
-/* editor */
-.editor {
-  background: var(--ed-bg); color: var(--ed-ink); border-radius: .9rem; overflow: hidden;
-  box-shadow: 0 30px 60px -30px rgba(40, 10, 35, .45), 0 0 0 1px rgba(255,255,255,.04) inset;
-  font: 400 .84rem/1.75 var(--mono);
-}
-.ed-bar { display: flex; align-items: stretch; background: var(--ed-bar); overflow-x: auto; scrollbar-width: none; }
-.ed-bar::-webkit-scrollbar { display: none; }
-.dots { display: flex; gap: .4rem; align-items: center; padding: 0 .9rem; }
-.dots span { width: .65rem; height: .65rem; border-radius: 50%; background: #4A4250; }
-.tab {
-  appearance: none; border: 0; background: transparent; color: var(--ed-dim); cursor: pointer;
-  font: 400 .78rem/1 var(--mono); padding: .85rem 1rem; white-space: nowrap; border-top: 2px solid transparent;
-}
-.tab[aria-selected="true"] { background: var(--ed-bg); color: var(--ed-ink); border-top-color: var(--ed-key); }
-.tab:hover { color: var(--ed-ink); }
-.ed-body { display: grid; grid-template-columns: auto 1fr; padding: 1.1rem 0 1.3rem; overflow-x: auto; min-height: 20.5rem; }
-.gutter { color: #4F4656; text-align: right; padding: 0 1rem 0 1.1rem; user-select: none; font-variant-numeric: tabular-nums; }
-.code { margin: 0; padding-right: 1.25rem; white-space: pre; font: inherit; }
-.k { color: var(--ed-key); } .s { color: var(--ed-str); } .n { color: var(--ed-num); } .f { color: var(--ed-fn); } .c { color: var(--ed-dim); font-style: italic; }
-.caret { display: inline-block; width: .55em; height: 1.1em; vertical-align: -.2em; background: var(--ed-key); animation: blink 1.1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
-.ed-status { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 1rem; background: var(--ed-bar); color: var(--ed-dim); font-size: .72rem; }
+/* workspace card */
+.card-ws { background: var(--paper); border: 1px solid var(--hairline); border-radius: 1.1rem; box-shadow: 0 30px 60px -28px rgba(15,23,42,.25), 0 2px 6px rgba(15,23,42,.04); overflow: hidden; }
+.ws-top { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .8rem 1.1rem; border-bottom: 1px solid var(--hairline); background: var(--pale); }
+.ws-top .dots { display: flex; gap: .35rem; }
+.ws-top .dots i { width: .6rem; height: .6rem; border-radius: 50%; background: #DADDE8; }
+.ws-top .path { font: 400 .74rem/1 var(--mono); color: var(--muted); }
+.ws-body { padding: 1.4rem; display: grid; gap: 1.1rem; }
+.hello { display: flex; align-items: center; gap: .9rem; }
+.avatar { width: 2.9rem; height: 2.9rem; border-radius: 50%; background: var(--indigo); color: #fff; display: grid; place-items: center; font-weight: 700; flex: none; }
+.hello b { display: block; font-size: 1.05rem; }
+.hello small { color: var(--muted); font-size: .85rem; }
+.pill { display: inline-flex; align-items: center; gap: .4rem; font: 600 .74rem/1 var(--body); padding: .4rem .65rem; border-radius: 999px; background: var(--soft-emerald); color: #047857; white-space: nowrap; }
+.pill::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--emerald); }
+.hello .pill { margin-left: auto; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; }
+.tile { border: 1px solid var(--hairline); border-radius: var(--r); padding: .8rem .85rem; }
+.tile .k { font: 500 .66rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.tile .v { font-weight: 700; font-size: 1.05rem; margin-top: .35rem; line-height: 1.2; }
+.work { border: 1px solid var(--hairline); border-radius: var(--r); }
+.work .h { display: flex; justify-content: space-between; padding: .75rem .9rem; border-bottom: 1px solid var(--hairline); font: 500 .68rem/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.work ul { list-style: none; margin: 0; padding: .3rem .9rem; }
+.work li { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .55rem 0; font-weight: 600; font-size: .92rem; }
+.work li + li { border-top: 1px dashed var(--hairline); }
+.work li small { font: 500 .72rem/1 var(--mono); color: var(--indigo); background: var(--soft-indigo); padding: .3rem .5rem; border-radius: .35rem; }
+.ws-foot { font: 400 .78rem/1.5 var(--mono); color: var(--muted); }
+.ws-foot b { color: var(--ink); font-weight: 500; }
 
-/* ---------- sections ---------- */
-section.block { padding-block: var(--s5); border-top: 1px solid var(--line); }
-.head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s2); flex-wrap: wrap; margin-bottom: var(--s4); }
-.eyebrow { font: 500 .75rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--plum); }
-.head h2 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.05; margin-top: .6rem; }
-.head p { color: var(--muted); max-width: 26rem; font-size: .95rem; }
+/* stack strip */
+.strip { border-block: 1px solid var(--hairline); background: var(--pale); }
+.strip .wrap { display: flex; align-items: center; gap: 1rem 2.5rem; flex-wrap: wrap; justify-content: center; padding-block: 1.4rem; }
+.strip p { font: 500 .72rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.strip ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem 2rem; justify-content: center; }
+.strip li { font-weight: 700; font-size: 1.05rem; color: #8B94A8; letter-spacing: -.02em; }
 
-/* about */
-.about { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--s4) var(--s5); }
-.about .big { font: 500 clamp(1.3rem, 2.4vw, 1.65rem)/1.45 var(--display); letter-spacing: -.01em; max-width: 40rem; }
-.about .big b { color: var(--plum); font-weight: 700; }
-.facts { display: grid; gap: 0; align-content: start; margin: 0; }
-.facts div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--line); }
-.facts div:first-child { border-top: 1px solid var(--line); }
-.facts dt { font: 500 .75rem/1.9 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
-.facts dd { margin: 0; font-weight: 500; }
+/* sections */
+section.sec { padding-block: clamp(4rem, 8vw, 6rem); }
+section.alt { background: var(--pale); border-block: 1px solid var(--hairline); }
+.sh { text-align: center; max-width: 40rem; margin: 0 auto 3rem; }
+.sh h2 { font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.08; font-weight: 800; margin-top: .9rem; }
+.sh p { color: var(--muted); margin-top: 1rem; font-size: 1.05rem; }
 
-/* experience */
-.jobs { list-style: none; margin: 0; padding: 0; display: grid; }
-.job { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: var(--s2) var(--s4); padding-block: var(--s4); border-bottom: 1px solid var(--line); }
-.job:first-child { padding-top: 0; }
-.job:last-child { border-bottom: 0; padding-bottom: 0; }
-.when { font: 500 .82rem/1.6 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-.when .now { display: inline-block; margin-top: .5rem; color: var(--teal); font-size: .72rem; border: 1px solid color-mix(in srgb, var(--teal) 40%, transparent); padding: .15rem .45rem; border-radius: 999px; }
-.job h3 { font-size: 1.45rem; font-weight: 700; letter-spacing: -.015em; line-height: 1.2; }
-.org { color: var(--muted); margin-top: .25rem; }
-.org b { color: var(--ink); font-weight: 600; }
-.job ul { margin: var(--s2) 0 0; padding: 0; list-style: none; display: grid; gap: .6rem; max-width: 46rem; }
-.job li { position: relative; padding-left: 1.35rem; }
-.job li::before { content: "›"; position: absolute; left: 0; top: -.05rem; color: var(--plum); font: 700 1.1rem/1.6 var(--mono); }
+/* what I do */
+.three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.do { border: 1px solid var(--hairline); border-radius: 1rem; padding: 1.6rem; background: var(--paper); display: flex; flex-direction: column; gap: .8rem; }
+.ico { width: 2.6rem; height: 2.6rem; border-radius: .7rem; background: var(--soft-indigo); color: var(--indigo); display: grid; place-items: center; }
+.ico svg { width: 1.3rem; height: 1.3rem; }
+.do h3 { font-size: 1.2rem; font-weight: 700; }
+.do p { color: var(--muted); }
 
 /* projects */
-.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
-.proj {
-  background: var(--surface); border: 1px solid var(--line); border-radius: .9rem;
-  padding: var(--s3); display: flex; flex-direction: column; gap: var(--s2);
-  transition: border-color .25s, transform .25s;
-}
-.proj:hover { border-color: color-mix(in srgb, var(--plum) 55%, var(--line)); transform: translateY(-2px); }
-@media (prefers-reduced-motion: reduce) { .proj, .btn { transition: none; } .proj:hover, .btn:hover { transform: none; } }
-.proj.feature { background: var(--plum-soft); border-color: color-mix(in srgb, var(--plum) 25%, var(--line)); }
-.proj .meta { display: flex; justify-content: space-between; gap: 1rem; font: 500 .74rem/1.4 var(--mono); color: var(--muted); }
-.proj .meta .st { color: var(--teal); }
-.proj h3 { font-size: 1.55rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; }
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.proj { background: var(--paper); border: 1px solid var(--hairline); border-radius: 1rem; padding: 1.75rem; display: flex; flex-direction: column; gap: .9rem; transition: transform .25s, box-shadow .25s; }
+.proj:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -24px rgba(15,23,42,.25); }
+.proj.wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 1.5rem 2.5rem; align-items: start; }
+.proj .top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.proj .who { font: 500 .7rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.proj h3 { font-size: 1.5rem; font-weight: 800; line-height: 1.15; }
 .proj p { color: var(--muted); }
-.tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: auto; padding-top: var(--s1); }
-.tags span { font: 500 .72rem/1 var(--mono); padding: .4rem .55rem; border-radius: .35rem; background: var(--paper); border: 1px solid var(--line); color: var(--ink); }
-.proj.feature .tags span { background: var(--surface); }
-.suite { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; color: var(--muted); }
-.suite li { position: relative; padding-left: 1.2rem; }
-.suite li::before { content: "›"; position: absolute; left: 0; color: var(--plum); font: 700 1rem/1.65 var(--mono); }
-.suite b { color: var(--ink); font-weight: 600; }
-.visit { align-self: flex-start; display: inline-flex; gap: .4rem; font: 500 .85rem/1 var(--mono); color: var(--plum); text-decoration: none; padding: .7rem .95rem; border: 1px solid color-mix(in srgb, var(--plum) 40%, transparent); border-radius: .5rem; background: var(--surface); transition: background .2s; }
-.visit:hover { background: var(--plum); color: var(--paper); }
+.suite { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.suite li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: .25rem 1rem; padding: .85rem 1rem; border: 1px solid var(--hairline); border-radius: var(--r); background: var(--pale); }
+.suite b { font-weight: 700; }
+.suite span { color: var(--muted); font-size: .93rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tags span { font: 500 .72rem/1 var(--mono); padding: .42rem .6rem; border-radius: .4rem; background: var(--soft-indigo); color: var(--indigo-dark); }
+.visit { display: inline-flex; align-items: center; gap: .35rem; font-weight: 600; font-size: .92rem; color: var(--indigo); text-decoration: none; margin-top: auto; }
+.visit:hover { text-decoration: underline; text-underline-offset: .25em; }
+.wide .left { display: flex; flex-direction: column; gap: .9rem; height: 100%; }
+
+/* experience */
+.jobs { list-style: none; margin: 0 auto; padding: 0; max-width: 52rem; display: grid; }
+.job { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: .4rem 2rem; padding-block: 1.6rem; border-top: 1px solid var(--hairline); }
+.job:last-child { border-bottom: 1px solid var(--hairline); }
+.when { font: 500 .8rem/1.7 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.job h3 { font-size: 1.2rem; font-weight: 700; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; }
+.job .org { color: var(--indigo); font-weight: 600; font-size: .95rem; margin-top: .15rem; }
+.job p.d { color: var(--muted); margin-top: .5rem; }
 
 /* skills */
-.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 var(--s4); }
-.sk { padding-block: var(--s3); border-top: 1px solid var(--line); }
-.sk h3 { font: 500 .75rem/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: .85rem; }
-.sk ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .35rem .9rem; }
-.sk li { font-weight: 500; }
-.sk.core li { color: var(--plum); font-weight: 600; }
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.sk { background: var(--paper); border: 1px solid var(--hairline); border-radius: 1rem; padding: 1.4rem 1.5rem; }
+.sk h3 { font: 500 .72rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; margin: 0; padding: 0; }
+.chips li { font-weight: 600; font-size: .88rem; padding: .45rem .8rem; border: 1px solid var(--hairline); border-radius: 999px; background: var(--pale); }
+.sk.main .chips li { background: var(--soft-indigo); border-color: #DEDBFF; color: var(--indigo-dark); }
 
 /* education */
-.edu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s4) var(--s5); }
-.edu h3.lbl { font: 500 .75rem/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: var(--s2); }
-.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .25rem 1rem; padding-block: var(--s2); border-top: 1px solid var(--line); }
-.row .t { font: 700 1.15rem/1.3 var(--display); }
-.row .y { font: 500 .8rem/1.9 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-.row .d { color: var(--muted); grid-column: 1 / -1; font-size: .95rem; }
+.edu { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 3rem; }
+.ed { border-top: 2px solid var(--ink); padding-top: 1rem; }
+.ed .k { font: 500 .68rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.ed b { display: block; font-size: 1rem; margin-top: .55rem; line-height: 1.35; }
+.ed span { display: block; color: var(--muted); font-size: .88rem; margin-top: .3rem; }
 
 /* contact */
-.contact { padding-block: var(--s6); border-top: 1px solid var(--line); }
-.contact h2 { font-size: clamp(2.4rem, 7vw, 4.8rem); font-weight: 800; letter-spacing: -.035em; line-height: .98; max-width: 14ch; }
-.contact h2 em { font-style: normal; color: var(--plum); }
-.contact p { color: var(--muted); margin-top: var(--s3); max-width: 34rem; }
-.mail { display: inline-block; margin-top: var(--s4); font: 500 clamp(1.05rem, 3vw, 1.6rem)/1.2 var(--mono); color: var(--ink); text-decoration-color: var(--plum); text-underline-offset: .3em; word-break: break-all; }
-.mail:hover { color: var(--plum); }
-.foot { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: var(--s3); border-top: 1px solid var(--line); font: 400 .78rem/1.4 var(--mono); color: var(--muted); }
+.contact { padding-block: clamp(3rem, 7vw, 5rem); }
+.band { background: var(--indigo); color: #fff; border-radius: 1.5rem; padding: clamp(2.2rem, 6vw, 4rem); display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 2rem; align-items: end; position: relative; overflow: hidden; }
+.band::after { content: ""; position: absolute; width: 26rem; height: 26rem; border-radius: 50%; right: -8rem; top: -12rem; background: radial-gradient(circle, rgba(255,255,255,.18), transparent 70%); pointer-events: none; }
+.band .label { color: #C7C3FF; }
+.band h2 { font-size: clamp(2rem, 4.5vw, 3.1rem); line-height: 1.05; font-weight: 800; margin-top: .9rem; }
+.band h2 em.s { color: #fff; display: block; }
+.band p { color: #DCD9FF; margin-top: 1rem; max-width: 30rem; }
+.band .acts { display: grid; gap: .7rem; position: relative; z-index: 1; }
+.band .btn { justify-content: space-between; border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: #fff; border-radius: .8rem; padding: 1rem 1.2rem; }
+.band .btn:hover { background: rgba(255,255,255,.16); }
+.band .btn.mail { background: #fff; color: var(--indigo-dark); border-color: #fff; }
+.band .btn small { font: 400 .8rem/1 var(--mono); opacity: .8; word-break: break-all; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-block: 1.8rem; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--hairline); }
 
-/* ---------- responsive ---------- */
-@media (max-width: 900px) {
-  .hero .wrap, .about, .edu { grid-template-columns: minmax(0, 1fr); }
-  .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero { padding-block: var(--s4) var(--s5); }
+/* responsive */
+@media (max-width: 960px) {
+  .hero .wrap, .proj.wide, .band { grid-template-columns: minmax(0, 1fr); }
+  .three { grid-template-columns: minmax(0, 1fr); }
+  .edu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 640px) {
-  .nav a.opt { display: none; }
+@media (max-width: 680px) {
+  .links a.opt { display: none; }
   .projects, .skills { grid-template-columns: minmax(0, 1fr); }
-  .job { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
-  .facts div { grid-template-columns: 6rem 1fr; }
-  .editor { font-size: .76rem; }
-  section.block { padding-block: var(--s4); }
+  .job { grid-template-columns: minmax(0, 1fr); }
+  .suite li { grid-template-columns: minmax(0, 1fr); }
+  .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tile { padding: .65rem; }
+  .tile .v { font-size: .92rem; }
+  .hello .pill { display: none; }
 }
+@media (max-width: 420px) { .edu { grid-template-columns: minmax(0, 1fr); } }
 </style>
 </head>
 <body>
 
-<header class="top">
+<header class="nav">
   <div class="wrap">
-    <a class="mark" href="#top">justin<span>.</span>saju</a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#about" class="opt">about</a>
-      <a href="#work">work</a>
-      <a href="#projects">projects</a>
-      <a href="#skills" class="opt">skills</a>
-      <a href="#contact">contact</a>
+    <a class="logo" href="#top">justin saju<span>.</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience" class="opt">Experience</a>
+      <a href="#skills" class="opt">Skills</a>
+      <a class="btn primary" href="#contact">Contact me</a>
     </nav>
   </div>
 </header>
@@ -259,272 +216,208 @@ section.block { padding-block: var(--s5); border-top: 1px solid var(--line); }
   <section class="hero">
     <div class="wrap">
       <div>
-        <span class="status"><i></i>Open to Python / Odoo roles</span>
-        <h1>Justin<br><em>Saju</em></h1>
-        <p class="role">Python / Odoo Developer at Cybrosys Technologies</p>
-        <p class="lede">I customize Odoo ERP for real businesses and build the tools that make Odoo faster to develop and deploy, from the Cybrosys Assista IDE and its AI coding assistant to a SaaS platform that spins up Odoo instances on demand.</p>
+        <p class="label">Python / Odoo Developer · Calicut, Kerala</p>
+        <h1>I build on Odoo. <em class="s">And the tools that make it easier.</em></h1>
+        <p class="sub">I'm Justin. At Cybrosys Technologies I customize Odoo for real businesses and help build products for Odoo developers, like Assista IDE and EasyInstance.</p>
         <div class="cta">
-          <a class="btn primary" href="#projects">See my work</a>
-          <a class="btn" href="https://github.com/justinsaju66" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-            GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/justin-saju-aaa352188/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.15C0 .52.52 0 1.17 0h13.66C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.17 1.15H1.17C.52 16 0 15.48 0 14.85V1.15Zm4.94 12.24V6.17H2.54v7.22h2.4ZM3.74 5.18c.84 0 1.36-.55 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01Zm4.91 8.21V9.36c0-.22.02-.43.08-.59.18-.43.57-.88 1.23-.88.87 0 1.21.66 1.21 1.63v3.87h2.4V9.25c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.03h-.02l.02-.03V6.17h-2.4c.03.68 0 7.22 0 7.22h2.4Z"/></svg>
-            LinkedIn</a>
+          <a class="btn primary" href="#projects">See my work <span aria-hidden="true">→</span></a>
+          <a class="btn" href="mailto:justinsaju66@gmail.com">Email me</a>
         </div>
-        <p class="where">Calicut, Kerala · India</p>
+        <div class="checks">
+          <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Open to new roles</span>
+          <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>2 years with Odoo</span>
+          <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Python · OWL · Docker</span>
+        </div>
       </div>
 
-      <div class="editor" aria-label="Code editor showing a profile written as an Odoo module">
-        <div class="ed-bar" role="tablist" aria-label="Files">
-          <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
-          <button class="tab" role="tab" id="tab-0" aria-selected="true" aria-controls="ed-panel" data-i="0">__manifest__.py</button>
-          <button class="tab" role="tab" id="tab-1" aria-selected="false" aria-controls="ed-panel" data-i="1">models/developer.py</button>
-          <button class="tab" role="tab" id="tab-2" aria-selected="false" aria-controls="ed-panel" data-i="2">contact_card.js</button>
+      <div class="card-ws" aria-label="Profile summary">
+        <div class="ws-top"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span class="path">justin_saju / overview</span></div>
+        <div class="ws-body">
+          <div class="hello">
+            <div class="avatar" aria-hidden="true">JS</div>
+            <div><b>Justin Saju</b><small>Python / Odoo Developer</small></div>
+            <span class="pill">Available</span>
+          </div>
+          <div class="tiles">
+            <div class="tile"><div class="k">Company</div><div class="v">Cybrosys</div></div>
+            <div class="tile"><div class="k">Since</div><div class="v">Dec 2024</div></div>
+            <div class="tile"><div class="k">Degree</div><div class="v">MCA</div></div>
+          </div>
+          <div class="work">
+            <div class="h"><span>Working on</span><span>Type</span></div>
+            <ul>
+              <li>Assista IDE <small>IDE</small></li>
+              <li>Odoo Board <small>Dashboards</small></li>
+              <li>EasyInstance <small>SaaS</small></li>
+              <li>Odoo Checker <small>VS Code</small></li>
+            </ul>
+          </div>
+          <p class="ws-foot">stack = [<b>Python</b>, <b>Odoo ORM</b>, <b>OWL</b>, <b>Docker</b>]</p>
         </div>
-        <div class="ed-body" id="ed-panel" role="tabpanel" aria-labelledby="tab-0">
-          <div class="gutter" id="gutter" aria-hidden="true"></div>
-          <pre class="code" id="code"></pre>
-        </div>
-        <div class="ed-status"><span id="ed-lang">Python · UTF-8</span><span>justin_saju · main</span></div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="about">
+  <div class="strip">
     <div class="wrap">
-      <div class="head">
-        <div><div class="eyebrow">About</div><h2>ERP work, with a toolmaker's habit</h2></div>
+      <p>I work with</p>
+      <ul><li>Odoo</li><li>Python</li><li>OWL</li><li>React</li><li>Docker</li><li>PostgreSQL</li><li>TypeScript</li></ul>
+    </div>
+  </div>
+
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="sh">
+        <p class="label">What I do</p>
+        <h2>Odoo work, <em class="s">from module to deployment.</em></h2>
       </div>
-      <div class="about">
-        <p class="big">I've spent <b>two years</b> inside Odoo: writing modules with the ORM, building QWeb reports, and shaping POS and Website for clients. Alongside that work I build the <b>tooling</b> around it, so developers spend less time on setup and more on the business logic that matters.</p>
-        <dl class="facts">
-          <div><dt>Now</dt><dd>Python / Odoo Developer, Cybrosys Technologies</dd></div>
-          <div><dt>Focus</dt><dd>Odoo modules, OWL frontends, Docker-based SaaS</dd></div>
-          <div><dt>Education</dt><dd>MCA, Shree Devi Institute of Technology</dd></div>
-          <div><dt>Based in</dt><dd>Calicut, Kerala</dd></div>
-        </dl>
+      <div class="three">
+        <div class="do">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+          <h3>ERP customization</h3>
+          <p>Custom Odoo modules, QWeb reports, POS and Website changes, shaped around how each client actually works.</p>
+        </div>
+        <div class="do">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div>
+          <h3>Developer tools</h3>
+          <p>Assista IDE, its AI assistant Coder, and VS Code extensions like Odoo Checker. Less setup, more time on real work.</p>
+        </div>
+        <div class="do">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z"/><path d="M12 12v6M9.5 14.5L12 12l2.5 2.5"/></svg></div>
+          <h3>SaaS &amp; deployment</h3>
+          <p>EasyInstance sets up Odoo instances automatically with Docker, so clients can start without waiting on servers.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="work">
+  <section class="sec alt" id="projects">
     <div class="wrap">
-      <div class="head">
-        <div><div class="eyebrow">Experience</div><h2>Where I've worked</h2></div>
-        <p>From Java and Django internships to full-time Odoo development.</p>
+      <div class="sh">
+        <p class="label">Selected work</p>
+        <h2>What I've been <em class="s">building.</em></h2>
+      </div>
+      <div class="projects">
+        <article class="proj wide">
+          <div class="left">
+            <div class="top"><span class="who">Cybrosys Technologies</span><span class="pill">Active</span></div>
+            <h3>Cybrosys Assista</h3>
+            <p>A set of products for Odoo developers. I work on both building them and shipping them.</p>
+            <div class="tags"><span>Code-OSS</span><span>TypeScript</span><span>VS Code API</span><span>AI</span><span>Odoo</span></div>
+            <a class="visit" href="https://assista.cybrosys.com/" target="_blank" rel="noopener">assista.cybrosys.com <span aria-hidden="true">↗</span></a>
+          </div>
+          <ul class="suite">
+            <li><b>Assista IDE</b><span>An IDE made for Odoo, built on Code-OSS. Guided setup, debugging and environment tools included.</span></li>
+            <li><b>Coder</b><span>The built-in AI assistant for writing Odoo code faster.</span></li>
+            <li><b>Odoo Board</b><span>Ready-made dashboards for Odoo.</span></li>
+            <li><b>Extensions</b><span>VS Code extensions for Odoo developers, such as Odoo Checker. Plus work on Cybrosys Desk.</span></li>
+          </ul>
+        </article>
+        <article class="proj">
+          <div class="top"><span class="who">Cybrosys Technologies</span><span class="pill">Live</span></div>
+          <h3>EasyInstance</h3>
+          <p>A SaaS platform that sets up and deploys Odoo instances automatically. I've worked on nearly every core feature with a cross-functional team.</p>
+          <div class="tags"><span>Docker</span><span>Python</span><span>PostgreSQL</span><span>Odoo</span></div>
+          <a class="visit" href="https://easyinstance.com/" target="_blank" rel="noopener">easyinstance.com <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="proj">
+          <div class="top"><span class="who">Client project</span></div>
+          <h3>Retail POS upgrade</h3>
+          <p>Custom Odoo POS for a retail store: quick discounts, faster product search, automatic GST, barcode scanning and a quicker checkout.</p>
+          <div class="tags"><span>Odoo POS</span><span>OWL</span><span>Python</span></div>
+        </article>
+        <article class="proj">
+          <div class="top"><span class="who">Odoo Inventory</span></div>
+          <h3>Stock alerts &amp; dashboard</h3>
+          <p>Alerts for low stock, late deliveries and supplier performance, built on Odoo's reordering rules. Plus a live stock dashboard in OWL.</p>
+          <div class="tags"><span>Odoo ORM</span><span>Scheduled Actions</span><span>OWL</span></div>
+        </article>
+        <article class="proj">
+          <div class="top"><span class="who">Camerinfolks · Internship</span></div>
+          <h3>Hospital admin system</h3>
+          <p>Patient records, appointments, billing and staff schedules in one Django app, with role-based access to keep data safe.</p>
+          <div class="tags"><span>Django</span><span>MySQL</span><span>JavaScript</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="sh">
+        <p class="label">Experience</p>
+        <h2>Where I've <em class="s">worked.</em></h2>
       </div>
       <ol class="jobs">
         <li class="job">
-          <div class="when">Dec 2024 – Present<br><span class="now">current</span></div>
+          <div class="when">Dec 2024 – Now</div>
           <div>
-            <h3>Python / Odoo Developer</h3>
-            <p class="org"><b>Cybrosys Technologies</b> · Calicut</p>
-            <ul>
-              <li>Customize and develop Odoo ERP modules using Python, Odoo ORM, QWeb reports, POS, Website and server-side workflows to meet client business requirements.</li>
-              <li>Develop interactive frontend components with OWL (Odoo Web Library) and React, improving UI performance and user experience across ERP modules.</li>
-              <li>Build VS Code extensions in TypeScript that improve collaborative coding workflows and team productivity.</li>
-              <li>Work in Agile sprints with senior developers, contributing to bug fixing, module testing and performance tuning.</li>
-            </ul>
+            <h3>Python / Odoo Developer <span class="pill">Current</span></h3>
+            <p class="org">Cybrosys Technologies · Calicut</p>
+            <p class="d">I build Odoo modules, OWL and React interfaces, and VS Code extensions, working in Agile sprints with senior developers.</p>
           </div>
         </li>
         <li class="job">
           <div class="when">Nov 2023 – Apr 2024</div>
           <div>
             <h3>Python Full Stack Developer Intern</h3>
-            <p class="org"><b>Camerinfolks Pvt. Ltd</b> · Kochi</p>
-            <ul>
-              <li>Developed web applications with Python and Django; designed and optimized MySQL databases for performance and reliability.</li>
-              <li>Built responsive frontend interfaces with HTML, CSS and JavaScript, aligned with design specifications.</li>
-              <li>Built a Hospital Administration System covering patient records, appointments, billing and staff schedules, with role-based access control.</li>
-            </ul>
+            <p class="org">Camerinfolks Pvt. Ltd · Kochi</p>
+            <p class="d">Built Django web apps, designed MySQL databases and made responsive frontends.</p>
           </div>
         </li>
         <li class="job">
           <div class="when">Oct 2022 – Nov 2022</div>
           <div>
             <h3>Java Developer Intern</h3>
-            <p class="org"><b>Zephyr Technologies</b> · Mangalore</p>
-            <ul>
-              <li>Implemented feature enhancements and bug fixes for an existing Java application using object-oriented design principles.</li>
-            </ul>
+            <p class="org">Zephyr Technologies · Mangalore</p>
+            <p class="d">Added features to an existing Java application and fixed bugs.</p>
           </div>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="block" id="projects">
+  <section class="sec alt" id="skills">
     <div class="wrap">
-      <div class="head">
-        <div><div class="eyebrow">Key projects</div><h2>Things I've built</h2></div>
-        <p>An Odoo product suite, a SaaS platform, and client modules running in production Odoo.</p>
-      </div>
-      <div class="projects">
-        <article class="proj feature">
-          <div class="meta"><span>Cybrosys Technologies</span><span class="st">product suite</span></div>
-          <h3>Cybrosys Assista</h3>
-          <p>I work on development and deployment across the Assista suite:</p>
-          <ul class="suite">
-            <li><b>Assista IDE</b> is a dedicated IDE for Odoo built on Code-OSS, with guided Odoo setup and onboarding and extensions for debugging and environment setup.</li>
-            <li><b>Coder</b> is the built-in AI coding assistant for AI-assisted Odoo development.</li>
-            <li><b>Odoo Board</b> provides pre-built dashboards for Odoo.</li>
-            <li><b>Cybrosys Desk</b>, plus VS Code extensions for Odoo developers such as Odoo Checker.</li>
-          </ul>
-          <div class="tags"><span>Code-OSS</span><span>TypeScript</span><span>VS Code Extension API</span><span>AI coding</span><span>Odoo</span></div>
-          <a class="visit" href="https://assista.cybrosys.com/" target="_blank" rel="noopener">assista.cybrosys.com <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="proj feature">
-          <div class="meta"><span>Cybrosys Technologies</span><span class="st">SaaS platform</span></div>
-          <h3>EasyInstance</h3>
-          <p>A SaaS platform that automates provisioning and deployment of Odoo instances. I work with a cross-functional team and have contributed to nearly all of its core features. Its Docker-based architecture cuts client onboarding and environment setup time.</p>
-          <div class="tags"><span>Docker</span><span>Python</span><span>Odoo</span><span>PostgreSQL</span></div>
-          <a class="visit" href="https://easyinstance.com/" target="_blank" rel="noopener">easyinstance.com <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="proj">
-          <div class="meta"><span>Cybrosys Technologies</span><span>retail client</span></div>
-          <h3>Custom POS Enhancement</h3>
-          <p>Customized Odoo POS for a retail client: quick-discount buttons, better product search, automatic GST calculation, barcode scanning and faster POS load time for smoother checkout.</p>
-          <div class="tags"><span>Odoo POS</span><span>OWL</span><span>JavaScript</span><span>Python</span></div>
-        </article>
-        <article class="proj">
-          <div class="meta"><span>Odoo Inventory</span><span>automation</span></div>
-          <h3>Inventory &amp; Purchase Automation</h3>
-          <p>Extended Odoo's reordering rules with automated alerts for low stock, delayed deliveries and supplier performance, plus an OWL dashboard for real-time stock analysis.</p>
-          <div class="tags"><span>Odoo ORM</span><span>Scheduled Actions</span><span>OWL</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="skills">
-    <div class="wrap">
-      <div class="head">
-        <div><div class="eyebrow">Skills</div><h2>The stack I work in</h2></div>
+      <div class="sh">
+        <p class="label">Skills</p>
+        <h2>My <em class="s">toolkit.</em></h2>
       </div>
       <div class="skills">
-        <div class="sk core"><h3>ERP / Odoo</h3><ul><li>Odoo ORM</li><li>QWeb</li><li>POS</li><li>Website Builder</li><li>XML Views &amp; XPath</li><li>Server Actions</li><li>Automated &amp; Scheduled Actions</li></ul></div>
-        <div class="sk"><h3>Languages</h3><ul><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>Java</li></ul></div>
-        <div class="sk"><h3>Frontend</h3><ul><li>OWL</li><li>React</li><li>HTML5</li><li>CSS3</li><li>Bootstrap</li></ul></div>
-        <div class="sk"><h3>Backend &amp; Data</h3><ul><li>Django</li><li>REST APIs</li><li>PostgreSQL</li><li>MySQL</li><li>SQLite</li></ul></div>
-        <div class="sk"><h3>DevOps &amp; Tools</h3><ul><li>Docker</li><li>Linux</li><li>Git</li><li>GitHub</li><li>WebRTC</li><li>VS Code Extension API</li></ul></div>
-        <div class="sk"><h3>AI &amp; Workflow</h3><ul><li>Claude</li><li>ChatGPT</li><li>GitHub Copilot</li><li>Cursor</li><li>Windsurf</li><li>Agile / Scrum</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="education">
-    <div class="wrap">
-      <div class="head">
-        <div><div class="eyebrow">Background</div><h2>Education &amp; certifications</h2></div>
+        <div class="sk main"><h3>Odoo</h3><ul class="chips"><li>Odoo ORM</li><li>QWeb</li><li>OWL</li><li>POS</li><li>Website Builder</li><li>XML Views &amp; XPath</li><li>Server &amp; Scheduled Actions</li></ul></div>
+        <div class="sk"><h3>Languages &amp; frameworks</h3><ul class="chips"><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>Java</li><li>React</li><li>Django</li><li>REST APIs</li><li>HTML &amp; CSS</li></ul></div>
+        <div class="sk"><h3>Data &amp; DevOps</h3><ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>Docker</li><li>Linux</li><li>Git &amp; GitHub</li><li>WebRTC</li></ul></div>
+        <div class="sk"><h3>AI &amp; dev tools</h3><ul class="chips"><li>Claude</li><li>ChatGPT</li><li>GitHub Copilot</li><li>Cursor</li><li>Windsurf</li><li>VS Code Extension API</li></ul></div>
       </div>
       <div class="edu">
-        <div>
-          <h3 class="lbl">Education</h3>
-          <div class="row"><span class="t">MCA, Master of Computer Applications</span><span class="y">2021 – 2023</span><span class="d">Shree Devi Institute of Technology, Mangalore · 80%</span></div>
-          <div class="row"><span class="t">B.Sc. Computer Science</span><span class="y">2018 – 2021</span><span class="d">IHRD College of Applied Science, Cheemeni · 72.5%</span></div>
-        </div>
-        <div>
-          <h3 class="lbl">Certifications</h3>
-          <div class="row"><span class="t">Foundations of Cloud Computing for Administrators</span><span class="y">Microsoft</span><span class="d">Cloud computing principles and administration.</span></div>
-          <div class="row"><span class="t">Java Masterclass</span><span class="y">Udemy</span><span class="d">Advanced Java, design patterns and application development.</span></div>
-        </div>
+        <div class="ed"><div class="k">Master's · 2021–2023</div><b>MCA</b><span>Shree Devi Institute of Technology, Mangalore · 80%</span></div>
+        <div class="ed"><div class="k">Bachelor's · 2018–2021</div><b>B.Sc. Computer Science</b><span>IHRD College of Applied Science, Cheemeni · 72.5%</span></div>
+        <div class="ed"><div class="k">Certificate · Microsoft</div><b>Foundations of Cloud Computing</b><span>For administrators</span></div>
+        <div class="ed"><div class="k">Certificate · Udemy</div><b>Java Masterclass</b><span>Advanced Java and design patterns</span></div>
       </div>
     </div>
   </section>
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <div class="eyebrow">Contact</div>
-      <h2 style="margin-top:.8rem">Need an Odoo developer? <em>Let's talk.</em></h2>
-      <p>I'm open to Python and Odoo development roles, ERP customization projects and developer-tooling work. Email is the fastest way to reach me.</p>
-      <a class="mail" href="mailto:justinsaju66@gmail.com">justinsaju66@gmail.com</a>
+      <div class="band">
+        <div>
+          <p class="label">Let's talk</p>
+          <h2>Need an Odoo developer? <em class="s">I'd love to hear about it.</em></h2>
+          <p>Open to full-time roles and Odoo projects. Email is the quickest way to reach me.</p>
+        </div>
+        <div class="acts">
+          <a class="btn mail" href="mailto:justinsaju66@gmail.com">Email <small>justinsaju66@gmail.com</small></a>
+          <a class="btn" href="https://www.linkedin.com/in/justin-saju-aaa352188/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="https://github.com/justinsaju66" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
-<footer class="wrap">
-  <div class="foot"><span>© 2026 Justin Saju</span><span>Calicut, Kerala</span></div>
+<footer>
+  <div class="wrap"><span>© 2026 Justin Saju</span><span>Calicut, Kerala, India</span></div>
 </footer>
-
-<script>
-(function () {
-  var files = [
-    { lang: "Python · UTF-8", src: [
-      '<span class="c"># -*- coding: utf-8 -*-</span>',
-      '{',
-      '    <span class="s">\'name\'</span>: <span class="s">\'Justin Saju\'</span>,',
-      '    <span class="s">\'summary\'</span>: <span class="s">\'Python / Odoo Developer\'</span>,',
-      '    <span class="s">\'version\'</span>: <span class="s">\'2.0\'</span>,  <span class="c"># years with Odoo</span>',
-      '    <span class="s">\'category\'</span>: <span class="s">\'ERP / Developer Tools\'</span>,',
-      '    <span class="s">\'author\'</span>: <span class="s">\'Cybrosys Technologies\'</span>,',
-      '    <span class="s">\'depends\'</span>: [<span class="s">\'base\'</span>, <span class="s">\'point_of_sale\'</span>,',
-      '                <span class="s">\'website\'</span>, <span class="s">\'stock\'</span>],',
-      '    <span class="s">\'data\'</span>: [<span class="s">\'views/assista_ide.xml\'</span>,',
-      '             <span class="s">\'views/easy_instance.xml\'</span>],',
-      '    <span class="s">\'installable\'</span>: <span class="k">True</span>,  <span class="c"># open to roles</span>',
-      '    <span class="s">\'application\'</span>: <span class="k">True</span>,',
-      '    <span class="s">\'license\'</span>: <span class="s">\'LGPL-3\'</span>,',
-      '}<span class="caret"></span>'
-    ]},
-    { lang: "Python · UTF-8", src: [
-      '<span class="k">from</span> odoo <span class="k">import</span> fields, models',
-      '',
-      '',
-      '<span class="k">class</span> <span class="f">Developer</span>(models.Model):',
-      '    _name = <span class="s">\'portfolio.developer\'</span>',
-      '    _description = <span class="s">\'Python / Odoo Developer\'</span>',
-      '',
-      '    name = fields.Char(default=<span class="s">\'Justin Saju\'</span>)',
-      '    city = fields.Char(default=<span class="s">\'Calicut, Kerala\'</span>)',
-      '    stack = fields.Char(',
-      '        default=<span class="s">\'Python, ORM, QWeb, OWL, React, Docker\'</span>)',
-      '    since = fields.Date(default=<span class="s">\'2024-12-01\'</span>)',
-      '    available = fields.Boolean(default=<span class="k">True</span>)<span class="caret"></span>'
-    ]},
-    { lang: "JavaScript · OWL", src: [
-      '<span class="c">/** @odoo-module **/</span>',
-      '<span class="k">import</span> { Component, useState } <span class="k">from</span> <span class="s">"@odoo/owl"</span>;',
-      '',
-      '<span class="k">export class</span> <span class="f">ContactCard</span> <span class="k">extends</span> Component {',
-      '    <span class="k">static</span> template = <span class="s">"portfolio.ContactCard"</span>;',
-      '',
-      '    <span class="f">setup</span>() {',
-      '        <span class="k">this</span>.state = <span class="f">useState</span>({',
-      '            email: <span class="s">"justinsaju66@gmail.com"</span>,',
-      '            github: <span class="s">"justinsaju66"</span>,',
-      '            replyWithin: <span class="n">24</span>, <span class="c">// hours</span>',
-      '        });',
-      '    }',
-      '}<span class="caret"></span>'
-    ]}
-  ];
-  var code = document.getElementById("code");
-  var gutter = document.getElementById("gutter");
-  var lang = document.getElementById("ed-lang");
-  var panel = document.getElementById("ed-panel");
-  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
-  function show(i) {
-    var f = files[i];
-    code.innerHTML = f.src.join("\n");
-    var nums = [];
-    for (var n = 1; n <= f.src.length; n++) nums.push(n);
-    gutter.textContent = nums.join("\n");
-    lang.textContent = f.lang;
-    tabs.forEach(function (t, j) { t.setAttribute("aria-selected", j === i ? "true" : "false"); t.tabIndex = j === i ? 0 : -1; });
-    panel.setAttribute("aria-labelledby", "tab-" + i);
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener("click", function () { show(i); });
-    t.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-        var k = (i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length;
-        show(k); tabs[k].focus(); e.preventDefault();
-      }
-    });
-  });
-  show(0);
-})();
-</script>
 </body>
 </html>
